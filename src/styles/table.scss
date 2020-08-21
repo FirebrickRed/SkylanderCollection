@@ -1,0 +1,16 @@
+@import "color.scss";
+
+table {
+  width: 100%;
+  margin: 10px;
+  border: 2px solid;
+  padding: 10px;
+
+  th{
+    font-size: $max-font-size * 0.6;
+  }
+  td {
+    text-align: center;
+    padding: 5px;
+  }
+}

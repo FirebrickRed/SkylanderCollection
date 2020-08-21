@@ -1,0 +1,63 @@
+@import "reset.scss";
+@import "allSkylanderStyling.scss";
+@import "profile.scss";
+@import "landing.scss";
+@import "color.scss";
+@import 'table.scss';
+@import 'modal.scss';
+
+html {
+  background: $base-color;
+  font-family: $main-font;
+}
+
+h1 {
+  font-size: $max-font-size;
+  text-align: center;
+  background: $header-color;
+  padding-bottom: 10px;
+
+  a{
+    text-decoration: none;
+    color: black;
+  }
+}
+
+h2 {
+  font-size: $max-font-size * 0.8;
+  text-align: center;
+  padding: 10px;
+}
+
+h3 {
+  font-size: $max-font-size * 0.6;
+}
+
+h4 {
+  font-size: $max-font-size * 0.4;
+}
+
+.center {
+  margin: auto;
+  width: fit-content;
+}
+
+.flex-row {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+#element-holder {
+  width: fit-content;
+  margin: auto;
+}
+
+.element {
+  width: 50px;
+  margin: 15px;
+  cursor: pointer;
+}

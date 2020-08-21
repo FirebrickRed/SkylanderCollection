@@ -1,0 +1,31 @@
+@import 'color.scss';
+
+.card {
+  width: 250px;
+  height: 250px;
+  margin-top: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 10px;
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  background: $secondary-color;
+  text-decoration: none;
+
+  label {
+    margin: 5px;
+  }
+
+  input {
+    margin: 5px;
+  }
+
+  button {
+    margin: 5px;
+  }
+}
+
+.card:hover {
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.3);
+  background: darken($color: $secondary-color, $amount: 5%);
+}

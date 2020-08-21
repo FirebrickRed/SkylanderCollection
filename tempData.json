@@ -1,0 +1,117 @@
+{
+  "skylanders": [
+    {
+      "name": "Stealth Elf",
+      "skylander": "Stealth Elf",
+      "element": "Life",
+      "series": 1,
+      "type": "skylander",
+      "game": 1,
+      "img": "https://vignette.wikia.nocookie.net/skylanders/images/b/bc/Stealth_Elf_Promo.jpg/revision/latest?cb=20120221220626"
+    }, {
+      "name": "Stealth Elf",
+      "element": "Life",
+      "skylander": "Stealth Elf",
+      "series": 2,
+      "type": "skylander",
+      "game": 2,
+      "img": "https://vignette.wikia.nocookie.net/skylanders/images/1/16/Series_2_Stealth_Elf_Promo.jpg/revision/latest/scale-to-width-down/699?cb=20130130072036"
+    }, {
+      "name": "Ninja Stealth Elf",
+      "element": "Life",
+      "skylander": "Stealth Elf",
+      "series": 3,
+      "type": "skylander",
+      "game": 3,
+      "img": "https://vignette.wikia.nocookie.net/skylanders/images/1/16/Series_3_Stealth_Elf_Promo.jpg/revision/latest/scale-to-width-down/700?cb=20130609225707"
+    }, {
+      "name": "Ninjini",
+      "element": "Magic",
+      "skylander": "Ninjini",
+      "series": 1,
+      "type": "skylander",
+      "game": 2,
+      "img": "https://vignette.wikia.nocookie.net/skylanders/images/7/78/Ninjini_Promo.jpg/revision/latest?cb=20130310050701"
+    }, {
+      "name": "Birthday Bash Big Bubble Pop Fizz",
+      "element": "Magic",
+      "skylander": "Pop Fizz",
+      "series": 1,
+      "type": "skylander",
+      "game": 5,
+      "img": "https://vignette.wikia.nocookie.net/skylanders/images/c/c5/Birthday_Bash_BB_Pop_Fizz.jpg/revision/latest?cb=20160111040932"
+    }, {
+      "name": "Pop Thorn",
+      "element": "Air",
+      "skylander": "Pop Thorn",
+      "series": 1,
+      "type": "skylander",
+      "game": 3,
+      "img": "https://vignette.wikia.nocookie.net/skylanders/images/6/6b/Pop_Thorn.jpg/revision/latest?cb=20131019000653"
+    }, {
+      "name": "Hex",
+      "element": "Undead",
+      "skylander": "Hex",
+      "series": 1,
+      "type": "skylander",
+      "game": 1,
+      "img": "https://vignette.wikia.nocookie.net/skylanders/images/4/48/290px-Hex.jpg/revision/latest/scale-to-width-down/700?cb=20170326190536"
+    }, {
+      "name": "Spotlight",
+      "element": "Light",
+      "skylander": "Spotlight",
+      "series": 1,
+      "type": "skylander",
+      "game": 4,
+      "img": "https://vignette.wikia.nocookie.net/skylanders/images/8/8b/Spotlight_Promo.jpg/revision/latest?cb=20141218040051"
+    }, {
+      "name": "Knight Mare",
+      "element": "Dark",
+      "skylander": "Knight Mare",
+      "series": 1,
+      "type": "skylander",
+      "game": 4,
+      "img": "https://vignette.wikia.nocookie.net/skylanders/images/7/79/Knight_Mare_Promo.jpg/revision/latest?cb=20141218040407"
+    }, {
+      "name": "Snap Shot",
+      "element": "Water",
+      "skylander": "Snap Shot",
+      "series": 1,
+      "type": "skylander",
+      "game": 4,
+      "img": "https://vignette.wikia.nocookie.net/skylanders/images/2/26/Snap_Shot_Promo.jpg/revision/latest/scale-to-width-down/700?cb=20140424001100"
+    }, {
+      "name": "Bash",
+      "element": "Earth",
+      "skylander": "Bash",
+      "series": 1,
+      "type": "skylander",
+      "game": 1,
+      "img": "https://vignette.wikia.nocookie.net/skylanders/images/9/9c/Bash.jpg/revision/latest/scale-to-width-down/700?cb=20120701192307"
+    }, {
+      "name": "Sunburn",
+      "element": "Fire",
+      "skylander": "Sunburn",
+      "series": 1,
+      "type": "skylander",
+      "game": 1,
+      "img": "https://vignette.wikia.nocookie.net/skylanders/images/e/e9/310px-Sunburn_01.jpg/revision/latest?cb=20170326190741"
+    }, {
+      "name": "Gear Shift",
+      "element": "Tech",
+      "skylander": "Gear Shift",
+      "series": 1,
+      "type": "skylander",
+      "game": 4,
+      "img": "https://vignette.wikia.nocookie.net/skylanders/images/4/42/Gearshift_Promo.jpg/revision/latest/scale-to-width-down/700?cb=20140610214032"
+    }, {
+      "name": "Drill Sergeant",
+      "element": "Tech",
+      "skylander": "Gear Shift",
+      "series": 1,
+      "type": "skylander",
+      "game": 1,
+      "img": "https://vignette.wikia.nocookie.net/skylanders/images/f/f9/290px-Drill-Sergeant_03.jpg/revision/latest?cb=20170326183948"
+    }
+  ]
+}

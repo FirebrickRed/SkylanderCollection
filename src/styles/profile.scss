@@ -1,0 +1,47 @@
+@import "color.scss";
+
+@mixin arrows {
+  margin: auto 0px;
+  cursor: pointer;
+  user-select: none;
+  padding: 5px;
+  font-size: 20px;
+
+  &:hover {
+    color: lighten($color: #000000, $amount: 50%);
+  }
+}
+
+.mini {
+  padding: 10px;
+
+  .display {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    background: $secondary-color;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 10px;
+    filter: drop-shadow(0 0 0.4rem dimgray);
+
+    .left {
+      @include arrows;
+    }
+
+    .right {
+      @include arrows;
+      margin-left: auto;
+    }
+
+    .disabled {
+      cursor: not-allowed;
+    }
+
+    .view-all {
+      display: flex;
+      overflow: hidden;
+      @include skylander(150px);
+    }
+  }
+}

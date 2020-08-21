@@ -1,0 +1,27 @@
+@import 'color.scss';
+
+#modal {
+  position: fixed;
+  width: 500px;
+  background: red;
+  top: 10%;
+
+
+  .header {
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .close {
+    color: #aaaaaa;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
