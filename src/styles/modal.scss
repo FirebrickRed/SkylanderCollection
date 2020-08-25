@@ -1,27 +1,127 @@
-@import 'color.scss';
+@import "color.scss";
+
+$size: 100px;
+
+@mixin border($color) {
+  border: solid 3px $color;
+  background: $color;
+  border-radius: 50%;
+  width: $size;
+  height: $size;
+  margin: auto;
+}
+
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  display: none;
+}
 
 #modal {
+  display: none;
   position: fixed;
-  width: 500px;
-  background: red;
+  width: fit-content;
+  background: $header-color;
   top: 10%;
-
+  margin: auto;
+  left: 0;
+  right: 0;
+  z-index: 11;
+  border: solid 2px black;
 
   .header {
     justify-content: space-between;
     padding: 10px;
   }
 
-  .close {
+  #close {
     color: #aaaaaa;
     font-size: 28px;
     font-weight: bold;
   }
-  
-  .close:hover,
-  .close:focus {
+
+  #close:hover,
+  #close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+  }
+
+  #skylander-modal {
+    background: $base-color;
+    justify-content: center;
+    display: flex;
+
+    .individual-skylander-modal {
+      text-align: center;
+      padding: 5px;
+      margin: 20px;
+      background: $secondary-color;
+      border-radius: 10px;
+      box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+
+      .buttons {
+        background: white;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+
+        h4 {
+          text-decoration: underline;
+          padding: 2px;
+        }
+
+        .button {
+          padding: 5px;
+          cursor: pointer;
+        }
+        .button:hover {
+          background: darken(white, 10%);
+          border-radius: 10px;
+        }
+      }
+
+      img {
+        width: $size;
+        height: $size;
+        border-radius: 50%;
+      }
+      .border-life {
+        @include border(#01980c);
+      }
+      .border-magic {
+        @include border(#572870);
+      }
+      .border-undead {
+        @include border(#4f4d59);
+      }
+      .border-tech {
+        @include border(#e96915);
+      }
+      .border-fire {
+        @include border(#cd0001);
+      }
+      .border-water {
+        @include border(#053677);
+      }
+      .border-air {
+        @include border(#25a2ed);
+      }
+      .border-earth {
+        @include border(#985805);
+      }
+      .border-light {
+        @include border(#fbcb35);
+      }
+      .border-dark {
+        @include border(#0b2342);
+      }
+    }
   }
 }

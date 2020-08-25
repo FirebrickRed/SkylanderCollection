@@ -75,17 +75,7 @@ let allSkylanders;
 getAllSkylanders();
 populateOtherSkylanders();
 
-const addSkylanderToRender = (skylander, headerSize) =>
-  localStorage.user
-    ? `
-  <div id='${skylander.skylanderName}' class='individual-skylander border-${skylander.element}'>
-    <img class='individual-skylander-pic' src='${skylander.image}' />
-    <${headerSize} class='title'>${skylander.name}</${headerSize}>
-  </div>
-  <div id='${skylander.skylanderId}' class='tempButton'>Add to collection</div>
-  <div id='${skylander.skylanderId}' class='tempButton'>Add to Wishlist</div>
-`
-    : `
+const addSkylanderToRender = (skylander, headerSize) => `
   <div id='${skylander.skylanderName}' class='individual-skylander border-${skylander.element}'>
     <img class='individual-skylander-pic' src='${skylander.image}' />
     <${headerSize} class='title'>${skylander.name}</${headerSize}>
@@ -343,22 +333,40 @@ const renderModalButtons = () => {
 };
 
 const openModal = (event) => {
-  console.log("open modal", event.target);
+  document.getElementById('overlay').style.display = 'block';
   let sameNamed = allSkylanders.filter(skylander => event.target.id === skylander.skylanderName);
-  console.log(sameNamed);
 
   let modal = `
     <div class='flex-row header'>
       <h3>${sameNamed[0].name}</h3>
-      <span class="close">&times;</span>
+      <span id="close">&times;</span>
     </div>
-    <div id='skylander-holder'>
+    <div id='skylander-modal'>
   `;
   sameNamed.forEach(skylander => {
-    modal += addSkylanderToRender(skylander, "h4");
+    modal += `
+      <div id='${skylander.skylanderName}' class='individual-skylander-modal'>
+        <div class='border-${skylander.element}'>
+          <img class='individual-skylander-pic' src='${skylander.image}' />
+        </div>
+        <div class='buttons'>
+          <h4>${skylander.name}</h4>
+          <div id='${skylander.skylanderId}' class='button'>Add to collection</div>
+          <div id='${skylander.skylanderId}' class='button'>Add to Wishlist</div>
+        </div>
+      </div>
+    `;
   });
   modal += '</div>';
   document.getElementById('modal').innerHTML = modal;
+  document.getElementById('modal').style.display = 'block';
+  document.getElementById('close').addEventListener('click', () => {
+    document.getElementById('modal').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+  });
+  // window.addEventListener('click', event => {
+  //   console.log('in window', event.target);
+  // });
 
 };
 

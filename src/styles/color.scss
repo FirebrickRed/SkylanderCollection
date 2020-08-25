@@ -18,6 +18,8 @@ $max-font-size: 50px;
     border-radius: 50%;
     margin-right: auto;
     margin-left: 10px;
+    width: $size;
+    height: $size;
 
     img {
       width: $size;
