@@ -65,13 +65,16 @@ const populateOtherSkylanders = () => {
       } else if (document.getElementById("skylandersWishList")) {
         renderSkylanders(wishlistSkylanders);
       }
-
+      collectionOfSkylanders = collectedSkylanders;
+      wishlistOfSkylanders = wishlistSkylanders;
       renderModalButtons();
     })
     .catch((err) => console.log(err));
 };
 
 let allSkylanders;
+let collectionOfSkylanders;
+let wishlistOfSkylanders;
 getAllSkylanders();
 populateOtherSkylanders();
 
@@ -85,7 +88,7 @@ const addSkylanderToRender = (skylander, headerSize) => `
 //If user is logged in or not display appropreate cards
 if (document.getElementById("index-holder")) {
   const loggedIn = `
-    <a class="card" href="">
+    <a class="card" href="skylandersCollection.html">
       <h3>My Collection</h3>
     </a>
     <a id="view-all" class="card" href="./allSkylanders.html">
@@ -126,7 +129,7 @@ const getCollection = (collected) => {
       <img id='image' />
       <h4 class='title'>View All</h4>
     </div>
-    `;
+  `;
 
   collected.forEach((skylander) => {
     document.getElementById(
@@ -216,24 +219,6 @@ const renderSkylanders = (skylandersToRender) => {
     }
   });
   renderModalButtons();
-
-  const tempButtonClass = document.getElementsByClassName("tempButton");
-  const tempButtonClick = (event) => {
-    console.log("in temp button click", event);
-    let foundSkylander = currentlyRenderedSkylanders.find(
-      (sky) => sky.skylanderId === event.target.id
-    );
-    if (event.target.innerHTML.toLowerCase().includes("collection")) {
-      addToList("collection", foundSkylander);
-    } else if (event.target.innerHTML.toLowerCase().includes("wish")) {
-      addToList("wish", foundSkylander);
-    } else {
-      console.log("uhhh not sure what your about...");
-    }
-  };
-  for (let i = 0; i < tempButtonClass.length; i++) {
-    tempButtonClass[i].addEventListener("click", tempButtonClick);
-  }
 };
 
 //#region buttons and selection
@@ -333,6 +318,7 @@ const renderModalButtons = () => {
 };
 
 const openModal = (event) => {
+  console.log('in modal');
   document.getElementById('overlay').style.display = 'block';
   let sameNamed = allSkylanders.filter(skylander => event.target.id === skylander.skylanderName);
 
@@ -344,19 +330,32 @@ const openModal = (event) => {
     <div id='skylander-modal'>
   `;
   sameNamed.forEach(skylander => {
-    modal += `
+    // if skylander is not in collection
+    // if skylander is not in wishlist
+    modal += 
+    `
       <div id='${skylander.skylanderName}' class='individual-skylander-modal'>
         <div class='border-${skylander.element}'>
           <img class='individual-skylander-pic' src='${skylander.image}' />
         </div>
         <div class='buttons'>
           <h4>${skylander.name}</h4>
-          <div id='${skylander.skylanderId}' class='button'>Add to collection</div>
-          <div id='${skylander.skylanderId}' class='button'>Add to Wishlist</div>
-        </div>
-      </div>
     `;
+    if(document.getElementById('allSkylanders')){
+      let isInCollection = collectionOfSkylanders.filter(sky => skylander.skylanderId === sky.skylanderId).length > 0;
+      if(!isInCollection){
+        modal += `<div id='${skylander.skylanderId}' class='button'>Add to collection</div>`;
+      }
+      let isInWishlist = wishlistOfSkylanders.filter(sky => skylander.skylanderId === sky.skylanderId).length > 0;
+      if(!isInWishlist) {
+        modal += `<div id='${skylander.skylanderId}' class='button'>Add to Wishlist</div>`;
+      }
+    }
+    modal+= `</div></div>`;
   });
+  // console.log('rendered skylander: ', );
+
+
   modal += '</div>';
   document.getElementById('modal').innerHTML = modal;
   document.getElementById('modal').style.display = 'block';
@@ -364,6 +363,27 @@ const openModal = (event) => {
     document.getElementById('modal').style.display = 'none';
     document.getElementById('overlay').style.display = 'none';
   });
+  console.log('all skylanders', allSkylanders);
+  console.log('collected', collectionOfSkylanders);
+  console.log('wishlist', wishlistOfSkylanders);
+
+  const buttonClass = document.getElementsByClassName("button");
+  console.log(buttonClass.length);
+  const addToListClick = event => {
+    console.log('in button click');
+    console.log(currentlyRenderedSkylanders);
+    let foundSkylander = currentlyRenderedSkylanders.find(sky => sky.skylanderId === event.target.id);
+    if(event.target.innerHTML.toLowerCase().includes('collection')) {
+      addToList('collection', foundSkylander);
+    } else if(event.target.innerHTML.toLowerCase().includes('wish')) {
+      addToList('wish', foundSkylander);
+    } else {
+      console.log('uhhhhh not sure what your about....');
+    }
+  };
+  for(let i = 0; i < buttonClass.length; i++) {
+    buttonClass[i].addEventListener('click', addToListClick);
+  }
   // window.addEventListener('click', event => {
   //   console.log('in window', event.target);
   // });
