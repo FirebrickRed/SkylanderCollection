@@ -80,7 +80,7 @@ populateOtherSkylanders();
 
 const addSkylanderToRender = (skylander, headerSize) => `
   <div id='${skylander.skylanderName}' class='individual-skylander border-${skylander.element}'>
-    <img class='individual-skylander-pic' src='${skylander.image}' />
+    <img class='individual-skylander-pic' loading='lazy' src='${skylander.image}' />
     <${headerSize} class='title'>${skylander.name}</${headerSize}>
   </div>
 `;
@@ -120,6 +120,16 @@ if (document.getElementById("index-holder")) {
     ? loggedIn
     : notLoggedIn;
 }
+
+const footer = document.createElement("footer");
+footer.className = "site-footer";
+footer.innerHTML = `
+  © 2025 Jessica Kirby. This is a fan-made project for educational and portfolio purposes only.<br>
+  Skylanders and all related characters are © Activision Publishing, Inc.<br>
+  Character artwork sourced from <a href="https://skylanders.fandom.com/wiki/Skylanders_Wiki" target="_blank" rel="noopener noreferrer">Skylanders Wiki on Fandom</a>.
+`;
+
+document.body.appendChild(footer);
 
 //#region profile
 

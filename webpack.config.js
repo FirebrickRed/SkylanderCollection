@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   devtool: 'inline-source-map',
   module: {
@@ -25,7 +27,10 @@ module.exports = {
   },
   devServer: {
     port: 3000,
-    contentBase: './dist',
-    inline: true
+    open: true,
+    hot: true,
+    static: {
+      directory: path.join(__dirname, 'dist')
+    }
   }
 };
