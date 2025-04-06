@@ -330,7 +330,6 @@ const renderModalButtons = () => {
 };
 
 const openModal = (event) => {
-  console.log('in modal');
   document.getElementById('overlay').style.display = 'block';
   let sameNamed = allSkylanders.filter(skylander => event.target.id === skylander.skylanderName);
 
@@ -353,19 +352,21 @@ const openModal = (event) => {
         <div class='buttons'>
           <h4>${skylander.name}</h4>
     `;
-    if(document.getElementById('allSkylanders')){
-      let isInCollection = collectionOfSkylanders.filter(sky => skylander.skylanderId === sky.skylanderId).length > 0;
-      if(!isInCollection){
-        modal += `<div id='${skylander.skylanderId}' class='button'>Add to collection</div>`;
-      }
-      let isInWishlist = wishlistOfSkylanders.filter(sky => skylander.skylanderId === sky.skylanderId).length > 0;
-      if(!isInWishlist) {
-        modal += `<div id='${skylander.skylanderId}' class='button'>Add to Wishlist</div>`;
+    if (localStorage.user) {
+      if(document.getElementById('allSkylanders')){
+        let isInCollection = collectionOfSkylanders.filter(sky => skylander.skylanderId === sky.skylanderId).length > 0;
+        if(!isInCollection) {
+          modal += `<div id='${skylander.skylanderId}' class='button'>Add to collection</div>`;
+        }
+        let isInWishlist = wishlistOfSkylanders.filter(sky => skylander.skylanderId === sky.skylanderId).length > 0;
+        if(!isInWishlist) {
+
+          modal += `<div id='${skylander.skylanderId}' class='button'>Add to Wishlist</div>`;
+        }
       }
     }
     modal+= `</div></div>`;
   });
-  // console.log('rendered skylander: ', );
 
 
   modal += '</div>';
