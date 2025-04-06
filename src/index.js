@@ -76,7 +76,9 @@ let allSkylanders;
 let collectionOfSkylanders;
 let wishlistOfSkylanders;
 getAllSkylanders();
-populateOtherSkylanders();
+if (localStorage.user) {
+  populateOtherSkylanders();
+}
 
 const addSkylanderToRender = (skylander, headerSize) => `
   <div id='${skylander.skylanderName}' class='individual-skylander border-${skylander.element}'>
